@@ -1,15 +1,16 @@
 {
-  "name": "tslint-config-airbnb",
-  "description": "A TSLint config for Airbnb JavaScript Style",
+  "name": "@postmates/tslint-config",
+  "description": "A TSLint config for Postmates JavaScript Style",
   "version": "5.6.0",
   "author": "progre",
   "bugs": {
-    "url": "https://github.com/progre/tslint-config-airbnb/issues"
+    "url": "https://github.com/postmates/typescript/issues"
   },
   "dependencies": {
     "tslint-consistent-codestyle": "^1.10.0",
     "tslint-eslint-rules": "^4.1.1",
-    "tslint-microsoft-contrib": "~5.0.1"
+    "tslint-microsoft-contrib": "~5.0.1",
+    "tslint-react": "^3.5.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^4.3.0",
@@ -17,18 +18,18 @@
     "conventional-changelog-cli": "^1.3.5",
     "husky": "^0.14.3"
   },
-  "homepage": "https://github.com/progre/tslint-config-airbnb/#readme",
+  "homepage": "https://github.com/postmates/typescript",
   "keywords": [
-    "airbnb",
+    "postmates",
     "tslint",
     "typescript"
   ],
   "license": "Apache-2.0",
-  "main": "tslint.js",
+  "main": "index.js",
   "peerDependencies": {
     "tslint": "^5.5.0"
   },
-  "repository": "github:progre/tslint-config-airbnb",
+  "repository": "https://github.com/postmates/typescript",
   "scripts": {
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "commitmsg": "commitlint -e $GIT_PARAMS"

@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  extends: ['tslint-react', 'tslint-eslint-rules'],
   rulesDirectory: [
     path.join(path.dirname(require.resolve('tslint-consistent-codestyle')), './'),
     path.join(path.dirname(require.resolve('tslint-eslint-rules')), 'dist/rules'),
@@ -38,15 +39,17 @@ module.exports = {
     'ter-arrow-parens': [
       true,
       'as-needed',
-      { 'requireForBlockBody': true },
+      { 'requireForBlockBody': true }
     ], // 8.4
     'no-duplicate-imports': true, // 10.4
     'one-variable-per-declaration': [true, 'ignore-for-loop'], // 13.2
     'no-increment-decrement': true, // 13.6
     'triple-equals': [true, 'allow-null-check'], // 15.1
     'no-boolean-literal-compare': true, // 15.3
+    // NOTE(will): This can be reenabled once https://github.com/palantir/tslint/issues/3279 is
+    // fixed. Currently fails in conditional JSX because a JSX element is always truthy.
     'strict-boolean-expressions': [ // 15.3
-      true,
+      false,
       'allow-null-union',
       'allow-undefined-union',
       'allow-string',
@@ -76,7 +79,16 @@ module.exports = {
     'space-in-parens': [true, 'never'], // 19.9
     'array-bracket-spacing': [true, 'never'], // 19.10
     'object-curly-spacing': [true, 'always'], // 19.11
-    'max-line-length': [true, 100], // 19.12
+    'ter-max-len': [
+      true,
+      {
+        'code': 100,
+        'tabWidth': 2,
+        'ignoreStrings': true,
+        // NOTE(will): This is currently broken with TS 2.7
+        'ignoreTemplateLiterals': true,
+      },
+    ],
     'trailing-comma': [
       true,
       {
@@ -84,7 +96,7 @@ module.exports = {
         singleline: 'never',
       },
     ], // 20.2
-    semicolon: [true, 'always'], // 21.1
+    semicolon: [true, 'always', 'ignore-bound-class-methods'], // 21.1
     'no-construct': true, // 22.2, 22.3, 22.6
     radix: true, // 22.3
     'function-name': [
@@ -97,8 +109,10 @@ module.exports = {
         'static-method-regex': /^[a-z$][\w\d]+$/,
       }, // 23.1
     ],
-    'variable-name': [true, 'check-format'], // 23.2
+    'variable-name': [true, 'check-format', 'allow-pascal-case'], // 23.2
     'no-this-assignment': true, // 23.5
-    'import-name': true, // 23.6
+    'jsx-no-multiline-js': false,
+    'jsx-no-lambda': false,
+    'jsx-boolean-value': false,
   },
 };
