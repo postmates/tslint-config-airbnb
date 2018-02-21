@@ -1,7 +1,7 @@
 {
   "name": "@postmates/tslint-config",
   "description": "A TSLint config for Postmates JavaScript Style",
-  "version": "5.6.1",
+  "version": "5.7.0",
   "author": "progre",
   "bugs": {
     "url": "https://github.com/postmates/typescript/issues"
