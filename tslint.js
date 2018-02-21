@@ -114,6 +114,6 @@ module.exports = {
     'jsx-no-multiline-js': false,
     'jsx-no-lambda': false,
     'jsx-boolean-value': false,
-    'no-unused-variables': true,
+    'no-unused-variable': true,
   },
 };
