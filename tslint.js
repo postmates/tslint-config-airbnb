@@ -115,5 +115,6 @@ module.exports = {
     'jsx-no-lambda': false,
     'jsx-boolean-value': false,
     'no-unused-variable': true,
+    'no-console': [true, "log", "error"],
   },
 };
